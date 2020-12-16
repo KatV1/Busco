@@ -13,6 +13,6 @@ Adicionalmente, debe haber una pantalla que permita a los usuarios registrar una
 solicitud de compra en donde deberán registrar obligatoriamente todos los datos que se
 muestran en la pantalla principal.
 
-![inicio](https://usmppe-my.sharepoint.com/personal/katherine_valcarcel1_usmp_pe/Documents/Programacion%20I/Capturas/Captura%20de%20Pantalla%202020-12-16%20a%20la(s)%2010.23.54%20a.%C2%A0m..png)
+![inicio](https://www.ceproperu.edu.pe/wp-content/uploads/2020/12/Captura-de-Pantalla-2020-12-16-a-las-10.23.54-a.-m..png)
 
-![Registro](https://usmppe-my.sharepoint.com/personal/katherine_valcarcel1_usmp_pe/Documents/Programacion%20I/Capturas/Captura%20de%20Pantalla%202020-12-16%20a%20la(s)%2010.27.05%20a.%C2%A0m..png)
+![Registro](https://www.ceproperu.edu.pe/wp-content/uploads/2020/12/Captura-de-Pantalla-2020-12-16-a-las-10.27.05-a.-m..png)
