@@ -6,18 +6,23 @@
 <div class="text-center">
     <h1 class="display-4">Solicitudes de compra</h1>
 
-    <table class="table">
-        <tr>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-        </tr>
-        @foreach (var item in Model)
+    <button class="btn btn-dark" onclick="listView()"><i class="fa fa-bars"></i> Lista</button>
+    <button class="btn btn-dark" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+    </p>
+
+    <div class="row">
+        @foreach (var item in Model.Where(x=>x.FechaRegistro > DateTime.Now.AddDays(-7)).ToList())
         {
-            <tr>
-                <td>@item.Nombre</td>
-                <td>@item.Descripcion</td>
-            </tr>
+            <div class="column">
+            <img src="@Url.Content(item.Url)" class="card-img-top ">
+            <h2>@item.Nombre</h2>
+            <p>Precio:</p>
+            <p>@item.Precio</p>
+            <p>Lugar:</p>
+            <p>@item.Lugar</p>
+            <p>Nro. de contacto:</p>
+            <p>@item.Telefono</p>
+        </div>
         }
-    </table>
-    
+    </div>
 </div>

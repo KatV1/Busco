@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Busco.Data;
 using Busco.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -6,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Busco.Controllers
 {
-    public class ProductoController: Controller
+    public class ProductoController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<ProductoController> _logger;
@@ -29,6 +32,8 @@ namespace Busco.Controllers
         {
             if (ModelState.IsValid)
             {
+                producto.FechaRegistro = DateTime.Now;
+                producto.Usuario = User.Identity.Name;
                 _context.Add(producto);
                 _context.SaveChanges();
                 return RedirectToAction("index", "home");
@@ -36,5 +41,11 @@ namespace Busco.Controllers
 
             return View(producto);
         }
-    }   
+
+        public List<Producto> LastSeven()
+        {
+            var lista = _context.Productos.Where(x=>x.FechaRegistro > DateTime.Now.AddDays(-7)).ToList();  
+            return lista;
+        }
+    }
 }

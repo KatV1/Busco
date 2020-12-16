@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -33,7 +34,7 @@ namespace Busco.Models
         [Required(ErrorMessage = "Por favor, ingrese su número de teléfono")]
         [StringLength(9)]
         [RegularExpression(@"[0-9]{9}", ErrorMessage = "No es un número de teléfono válido")]
-        [Display(Name="Teléfono")]
+        [Display(Name="Teléfono de contacto")]
         [Column("Telefono")]
         public string Telefono { get; set; }
 
@@ -43,9 +44,7 @@ namespace Busco.Models
         public string Lugar { get; set; }
 
         public string Usuario { get; set; }
-
-        [NotMapped]
-        public string Respuesta { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
     }
 }

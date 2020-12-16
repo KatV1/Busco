@@ -24,6 +24,21 @@ a {
   border-color: #1861ac;
 }
 
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  ;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  /* display: table; */
+  clear: both;
+  background:white
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
