@@ -1,0 +1,52 @@
+﻿@model Busco.Models.Producto
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h1 class="display-4">Registro de producto</h1>
+        <form asp-controller="Producto" asp-action="Registrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lugar" class="control-label"></label>
+                <textarea asp-for="Lugar" class="form-control">
+                    <span asp-validation-for="Lugar" class="text-danger"></span>
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+</div>
