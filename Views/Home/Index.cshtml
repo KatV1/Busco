@@ -11,18 +11,21 @@
     </p>
 
     <div class="row">
-        @foreach (var item in Model.Where(x=>x.FechaRegistro > DateTime.Now.AddDays(-7)).ToList())
+        @if (Model.Count == 0)
+        {
+            <p style="text-align:center;">Nada por mostrar</p>
+        }
+        @foreach (var item in Model.Where(x => x.FechaRegistro > DateTime.Now.AddDays(-7)).ToList())
         {
             <div class="column">
-            <img src="@Url.Content(item.Url)" class="card-img-top ">
-            <h2>@item.Nombre</h2>
-            <p>Precio:</p>
-            <p>@item.Precio</p>
-            <p>Lugar:</p>
-            <p>@item.Lugar</p>
-            <p>Nro. de contacto:</p>
-            <p>@item.Telefono</p>
-        </div>
+                <img src="@Url.Content(item.Url)" class="card-img-top" width=100px>
+                <h2>@item.Nombre</h2>
+                <p><b>Precio: </b> PEN @item.Precio</p>
+                <p><b>Lugar: </b> @item.Lugar</p>
+                <p><b>Nro. de contacto: </b>@item.Telefono</p>
+                <p><b>Fecha de solicitud: </b>@item.FechaRegistro.ToShortDateString()</p>
+                 <p><b>User: </b>@item.Usuario</p>
+            </div>
         }
     </div>
 </div>
